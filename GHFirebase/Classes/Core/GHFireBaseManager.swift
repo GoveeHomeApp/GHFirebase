@@ -22,7 +22,7 @@ public extension DataReportProtocol {
     }
 }
 
-open class GHFireBaseManager {
+@objc open class GHFireBaseManager: NSObject {
     
     /// 单例
     public private(set) static var instance = GHFireBaseManager()
@@ -34,8 +34,8 @@ open class GHFireBaseManager {
 
 extension GHFireBaseManager: DataReportProtocol {
     
-    public func initialSDK() {
-        
+    @objc public func initialSDK() {
+        FirebaseApp.configure()
     }
     
 }
