@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'App' do |ss|
-    ss.source_files  = 'GHConnector/App/**/*'
+    ss.source_files  = 'GHFirebase/App/**/*'
   end
   
   s.dependency 'Firebase/Analytics', '10.19.0'
