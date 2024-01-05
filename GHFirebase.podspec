@@ -23,20 +23,6 @@ Pod::Spec.new do |s|
 
   #- 推荐这种 -#
   # s.resource_bundles = { 'GHFirebase' => ['GHFirebase/*.xcassets'] }
-
-  s.default_subspec  = 'Core'
-  
-  s.subspec 'Core' do |ss|
-      ss.source_files  = 'GHFirebase/Core/**/*'
-  end
-  
-  s.subspec 'Pad' do |ss|
-    ss.source_files  = 'GHFirebase/Pad/**/*'
-  end
-  
-  s.subspec 'App' do |ss|
-    ss.source_files  = 'GHFirebase/App/**/*'
-  end
   
   s.dependency 'Firebase/Analytics', '10.19.0'
   s.dependency 'Firebase/Crashlytics', '10.19.0'
