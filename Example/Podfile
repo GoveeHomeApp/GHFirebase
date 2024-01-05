@@ -11,7 +11,7 @@ target 'GHFirebase_Example' do
 
   pod 'GHFirebase', :path => '../'
   
-  pod 'Firebase/Analytics'
+  pod 'Firebase/AnalyticsWithoutAdIdSupport'
   pod 'Firebase/Crashlytics'
 #  pod 'Firebase/Performance'
   

@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   #- 推荐这种 -#
   # s.resource_bundles = { 'GHFirebase' => ['GHFirebase/*.xcassets'] }
   
-  s.dependency 'Firebase/Analytics', '10.19.0'
+  s.dependency 'Firebase/AnalyticsWithoutAdIdSupport', '10.19.0'
   s.dependency 'Firebase/Crashlytics', '10.19.0'
 #  s.dependency 'Firebase/Performance', '10.19.0'
 
