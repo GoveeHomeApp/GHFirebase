@@ -55,13 +55,13 @@ extension GHFireBaseManager: DataReportProtocol {
     
     @objc public func logEventStartBridge(name: String, param: [String : Any], startDate: String) {
         var startParam = param
-        startParam[AnalyticsParameterStartDate] = startDate
+        startParam["event_start_time"] = startDate
         Analytics.logEvent(name, parameters: startParam)
     }
     
     @objc public func logEventFinishBridge(name: String, param: [String : Any], endDate: String) {
         var endParam = param
-        endParam[AnalyticsParameterEndDate] = endDate
+        endParam["event_end_time"] = endDate
         Analytics.logEvent(name, parameters: endParam)
     }
     
