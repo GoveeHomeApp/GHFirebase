@@ -24,18 +24,22 @@ Pod::Spec.new do |s|
   #- 推荐这种 -#
   # s.resource_bundles = { 'GHFirebase' => ['GHFirebase/*.xcassets'] }
 
-  # s.resources  = 'GHFirebase/**/*.{storyboard,xib}', 'GHFirebase/Assets/*'
-  # s.resources = 'Resources/*.png'
-
-  # s.preserve_paths = 'FilesToSave', 'MoreFilesToSave'
-
-  # s.framework  = 'SomeFramework'
-  # s.frameworks = 'SomeFramework', 'AnotherFramework'
-
-  # s.library   = 'iconv'
-  # s.libraries = 'iconv', 'xml2'
-
-  # s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
-  # s.dependency 'AFNetworking'
+  s.default_subspec  = 'Core'
+  
+  s.subspec 'Core' do |ss|
+      ss.source_files  = 'GHFirebase/Core/**/*'
+  end
+  
+  s.subspec 'Pad' do |ss|
+    ss.source_files  = 'GHFirebase/Pad/**/*'
+  end
+  
+  s.subspec 'App' do |ss|
+    ss.source_files  = 'GHConnector/App/**/*'
+  end
+  
+  s.dependency 'Firebase/Analytics', '10.19.0'
+  s.dependency 'Firebase/Crashlytics', '10.19.0'
+#  s.dependency 'Firebase/Performance', '10.19.0'
 
 end
