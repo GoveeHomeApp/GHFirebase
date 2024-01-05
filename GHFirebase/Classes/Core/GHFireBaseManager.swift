@@ -13,19 +13,22 @@ public protocol DataReportProtocol {
     
     func initialSDK()
     
+    func logEventBridge(name: String, param: [String: Any])
+    
 }
 
 public extension DataReportProtocol {
     
-    func initialSDK() {
-        
-    }
+    func initialSDK() { }
+    
+    func logEventBridge(name: String, param: [String: Any]) { }
+    
 }
 
 @objc open class GHFireBaseManager: NSObject {
     
     /// 单例
-    public private(set) static var instance = GHFireBaseManager()
+    @objc public private(set) static var instance = GHFireBaseManager()
     
     
     
@@ -36,6 +39,10 @@ extension GHFireBaseManager: DataReportProtocol {
     
     @objc public func initialSDK() {
         FirebaseApp.configure()
+    }
+    
+    @objc public func logEventBridge(name: String, param: [String: Any]) {
+        Analytics.logEvent(name, parameters: param)
     }
     
 }
