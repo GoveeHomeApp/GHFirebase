@@ -13,15 +13,26 @@ public protocol DataReportProtocol {
     
     func initialSDK()
     
-    func logEventBridge(name: String, param: [String: Any])
+    func userIdBridge(uId: String)
     
+    func logEventBridge(name: String, param: [String: Any])
+    // start 专属
+    func logEventStartBridge(name: String, param: [String: Any], startDate: String)
+    // finish 专属
+    func logEventFinishBridge(name: String, param: [String: Any], endDate: String)
 }
 
 public extension DataReportProtocol {
     
     func initialSDK() { }
     
+    func userIdBridge(uId: String) { }
+    
     func logEventBridge(name: String, param: [String: Any]) { }
+    
+    func logEventStartBridge(name: String, param: [String: Any], startDate: String) { }
+
+    func logEventFinishBridge(name: String, param: [String: Any], endDate: String) { }
     
 }
 
@@ -29,9 +40,6 @@ public extension DataReportProtocol {
     
     /// 单例
     @objc public private(set) static var instance = GHFireBaseManager()
-    
-    
-    
     
 }
 
@@ -43,6 +51,22 @@ extension GHFireBaseManager: DataReportProtocol {
     
     @objc public func logEventBridge(name: String, param: [String: Any]) {
         Analytics.logEvent(name, parameters: param)
+    }
+    
+    @objc public func logEventStartBridge(name: String, param: [String : Any], startDate: String) {
+        var startParam = param
+        startParam[AnalyticsParameterStartDate] = startDate
+        Analytics.logEvent(name, parameters: startParam)
+    }
+    
+    @objc public func logEventFinishBridge(name: String, param: [String : Any], endDate: String) {
+        var endParam = param
+        endParam[AnalyticsParameterEndDate] = endDate
+        Analytics.logEvent(name, parameters: endParam)
+    }
+    
+    @objc public func userIdBridge(uId: String) {
+        Analytics.setUserID(uId)
     }
     
 }
