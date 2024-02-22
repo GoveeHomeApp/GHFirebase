@@ -13,8 +13,8 @@ target 'GHFirebase_Example' do
   
   pod 'Firebase/AnalyticsWithoutAdIdSupport'
   pod 'Firebase/Crashlytics'
-#  pod 'Firebase/Performance'
-  
+  pod 'Firebase/Performance'
+  #pod 'Bugly'
 end
 
 post_install do |installer|

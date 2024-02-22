@@ -20,6 +20,8 @@ public protocol DataReportProtocol {
     func logEventStartBridge(name: String, param: [String: Any], startDate: String)
     // finish 专属
     func logEventFinishBridge(name: String, param: [String: Any], endDate: String)
+    
+    func initialBugly()
 }
 
 public extension DataReportProtocol {
@@ -33,6 +35,8 @@ public extension DataReportProtocol {
     func logEventStartBridge(name: String, param: [String: Any], startDate: String) { }
 
     func logEventFinishBridge(name: String, param: [String: Any], endDate: String) { }
+    
+    func initialBugly() { }
     
 }
 
@@ -67,6 +71,10 @@ extension GHFireBaseManager: DataReportProtocol {
     
     @objc public func userIdBridge(uId: String) {
         Analytics.setUserID(uId)
+    }
+    
+    @objc public func initialBugly() {
+        
     }
     
 }
