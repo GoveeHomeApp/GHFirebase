@@ -11,9 +11,18 @@ target 'GHFirebase_Example' do
 
   pod 'GHFirebase', :path => '../'
   
-  pod 'Firebase/AnalyticsWithoutAdIdSupport'
-  pod 'Firebase/Crashlytics'
-  pod 'Firebase/Performance'
+  pod 'Firebase/AnalyticsWithoutAdIdSupport', '10.21.0'
+  pod 'Firebase/Crashlytics', '10.21.0'
+  pod 'Firebase/Performance', '10.21.0'
+  pod 'FirebaseABTesting', '10.21.0'
+  pod 'FirebaseCoreExtension', '10.21.0'
+  pod 'FirebaseCoreInternal', '10.21.0'
+  pod 'FirebaseInstallations', '10.21.0'
+  pod 'FirebaseRemoteConfig', '10.21.0'
+#  pod 'FirebaseRemoteConfigInterop', '10.21.0'
+  pod 'FirebaseSessions', '10.21.0'
+  pod 'FirebaseSharedSwift', '10.21.0'
+  
   #pod 'Bugly'
 end
 
