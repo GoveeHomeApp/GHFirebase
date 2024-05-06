@@ -54,8 +54,11 @@ public extension DataReportProtocol {
 extension GHFireBaseManager: DataReportProtocol {
     
     @objc public func initialSDKByFilePath(path: String) {
-        let opt = FirebaseOptions(contentsOfFile: path)
-        FirebaseApp.configure(options: opt)
+        if let opt = FirebaseOptions(contentsOfFile: path) {
+            FirebaseApp.configure(options: opt)
+        } else {
+            FirebaseApp.configure()
+        }
     }
     
     @objc public func initialSDK() {
