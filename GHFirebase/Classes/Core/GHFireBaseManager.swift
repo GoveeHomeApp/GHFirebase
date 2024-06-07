@@ -13,6 +13,8 @@ public protocol DataReportProtocol {
     
     func initialSDK()
     
+    func initialSDKByFilePath(path: String)
+    
     func userIdBridge(uId: String)
     
     func logEventBridge(name: String, param: [String: Any])
@@ -27,6 +29,8 @@ public protocol DataReportProtocol {
 public extension DataReportProtocol {
     
     func initialSDK() { }
+    
+    func initialSDKByFilePath(path: String) { }
     
     func userIdBridge(uId: String) { }
     
@@ -48,6 +52,14 @@ public extension DataReportProtocol {
 }
 
 extension GHFireBaseManager: DataReportProtocol {
+    
+    @objc public func initialSDKByFilePath(path: String) {
+        if let opt = FirebaseOptions(contentsOfFile: path) {
+            FirebaseApp.configure(options: opt)
+        } else {
+            FirebaseApp.configure()
+        }
+    }
     
     @objc public func initialSDK() {
         FirebaseApp.configure()
