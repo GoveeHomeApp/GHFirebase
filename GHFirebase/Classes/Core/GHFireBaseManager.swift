@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseCore
 import FirebaseAnalytics
+import Bugly
 
 public protocol DataReportProtocol {
     
@@ -86,7 +87,7 @@ extension GHFireBaseManager: DataReportProtocol {
     }
     
     @objc public func initialBugly() {
-        
+        Bugly.start(withAppId: buglyAppId)
     }
     
 }

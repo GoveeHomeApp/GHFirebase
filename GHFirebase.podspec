@@ -27,6 +27,6 @@ Pod::Spec.new do |s|
   s.dependency 'Firebase/AnalyticsWithoutAdIdSupport'
   s.dependency 'Firebase/Crashlytics'
   s.dependency 'Firebase/Performance'
-  #s.dependency 'Bugly'
+  s.dependency 'Bugly'
 
 end
