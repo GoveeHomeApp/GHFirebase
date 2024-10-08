@@ -12,8 +12,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '13.0'
   
-  s.watchos.deployment_target = '7.0'
-  
   s.swift_version = '5.0'
 
   s.source       = { :git => 'git@github.com:GoveeHomeApp/GHFirebase.git', :tag => s.version.to_s }
