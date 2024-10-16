@@ -84,4 +84,9 @@ extension GHFireBaseManager: DataReportProtocol {
     @objc public func userIdBridge(uId: String) {
         Analytics.setUserID(uId)
     }
+    
+    @objc public func initialBugly() {
+        
+    }
+    
 }
