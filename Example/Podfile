@@ -24,7 +24,6 @@ target 'GHFirebase_Example' do
   pod 'FirebaseSharedSwift', '10.24.0'
   pod 'GoogleAppMeasurement', '10.24.0'
   
-  #pod 'Bugly'
 end
 
 post_install do |installer|

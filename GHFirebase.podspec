@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.author       = 'sy'
 
   s.ios.deployment_target = '13.0'
-
+  
   s.swift_version = '5.0'
 
   s.source       = { :git => 'git@github.com:GoveeHomeApp/GHFirebase.git', :tag => s.version.to_s }
@@ -27,6 +27,5 @@ Pod::Spec.new do |s|
   s.dependency 'Firebase/AnalyticsWithoutAdIdSupport'
   s.dependency 'Firebase/Crashlytics'
   s.dependency 'Firebase/Performance'
-  #s.dependency 'Bugly'
 
 end

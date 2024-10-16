@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+public let buglyAppId: String = "eb6f23ba6e"
