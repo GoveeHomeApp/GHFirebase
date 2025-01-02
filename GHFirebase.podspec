@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'GHFirebase'
-  s.version      = '0.0.3'
+  s.version      = '0.0.4'
   s.summary      = 'GHFirebase.'
 
   s.homepage     = 'git@github.com:GoveeHomeApp/GHFirebase.git'
